@@ -144,6 +144,6 @@
   "initiative": "1d20",
   "socket": true,
   "url": "",
-  "manifest": "",
+  "manifest": "https://github.com/McMustard/paranoidworld/blob/master/system.json",
   "download": ""
 }
