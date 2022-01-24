@@ -1,0 +1,174 @@
+<form>
+  <div class="dialog-wrapper level-up">
+
+    <header class="cell cell--description">
+      <h1 class="cell__title">{{char_class_name}}</h1>
+      {{#if blurb}}
+        <div class="cell__description">{{{blurb}}}</div>
+      {{/if}}
+    </header>
+
+    <div class="grid grid-3col">
+
+      {{#if clubs}}
+        <section class="cell cell--clubs">
+          <h2 class="cell__title">{{localize "DW.ChooseClub"}}</h2>
+          <ul class="selection-list">
+            {{#each clubs as |club key|}}
+              <li>
+                <div class="selection-control">
+                  <input type="radio" name="club-selection" data-club="{{key}}">
+                </div>
+                <div class="selection-content">
+                  <h3>{{club.label}}</h3>
+                  <p>{{club.description}}</p>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/if}}
+
+      {{#if drives}}
+        <section class="cell cell--drives">
+          <h2 class="cell__title">{{localize "DW.ChooseDrive"}}</h2>
+          <ul class="selection-list">
+            {{#each drives as |drive key|}}
+              <li>
+                <div class="selection-control">
+                  <input type="radio" name="drive-selection" data-drive="{{key}}">
+                </div>
+                <div class="selection-content">
+                  <h3>{{drive.label}}</h3>
+                  <p>{{drive.description}}</p>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/if}}
+
+      {{#if ability_scores}}
+        <section class="cell cell--ability-scores">
+          <h2 class="cell__title">{{localize "DW.ChooseAbilityScores"}}</h2>
+          <ul class="selection-list">
+            {{#each ability_labels as |ability ability_key|}}
+            {{!-- {{#each ability_scores as |ability_score key|}} --}}
+              <li>
+                <div class="selection-control">
+                  <select name="ability_score.{{ability.short}}" value="" data-ability={{ability.short}}>
+                    <option value="">—</option>
+                    {{!-- {{#each ../ability_labels as |ability_long ability_short|}} --}}
+                    {{#each ../ability_scores as |ability_score key|}}
+                      <option value="{{ability_score}}">{{ability_score}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+                <div class="selection-content">
+                  <h3 class="ability-score">{{ability.long}}</h3>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/if}}
+
+    </div>
+
+    {{#if ability_scores}}
+      {{!-- Hack to make a not condition. --}}
+    {{else}}
+      <div class="flexrow center">
+        <section class="cell cell--ability-scores">
+          <h2 class="cell__title">{{localize "DW.ChooseAbilityScoresIncrease"}}</h2>
+          <ul class="selection-list">
+            {{#each ability_labels as |ability ability_key|}}
+              <li>
+                <div class="selection-control">
+                  <input type="radio" name="ability_score.increase" value="{{ability.short}}" data-type="ability-increase" {{#if ability.disabled}}disabled="disabled" readonly{{/if}}>
+                </div>
+                <div class="selection-content">
+                  <h3 class="ability-score">{{ability.long}}</h3>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      </div>
+    {{/if}}
+
+    {{#if equipment}}
+      <div class="grid grid-3col">
+        {{#each equipment as |equipmentGroup groupId|}}
+          <section class="cell cell--equipment">
+            <h2 class="cell__title">{{equipmentGroup.label}}</h2>
+            <ul class="selection-list">
+              {{#each equipmentGroup.objects as |item key|}}
+                <li>
+                  <div class="selection-control">
+                    {{#ifEquals equipmentGroup.mode "radio"}}
+                      <input type="radio" name="equipment.{{groupId}}" data-item-id="{{item._id}}" data-type="equipment">
+                    {{else}}
+                      <input type="checkbox" name="equipment.{{groupId}}.{{key}}" data-item-id="{{item._id}}" data-type="equipment">
+                    {{/ifEquals}}
+                  </div>
+                  <div class="selection-content">
+                    <h4>{{item.name}}</h4>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+        {{/each}}
+      </div>
+    {{/if}}
+
+    {{#if starting_moves}}
+      <section class="cell cell--starting_moves">
+        <h1 class="cell__title">{{localize "DW.ChooseStartingMoves"}}</h1>
+        <ul class="selection-list">
+          {{!-- Loop through each group of starting moves. --}}
+          {{#each starting_move_groups as |moves group|}}
+            {{!-- If a movegroup is defined, that means this should be an OR choice. --}}
+            {{#if moves.0.data.data.moveGroup}}
+              <h2 class="cell__subtitle">{{localize "DW.ChooseStartingOne"}}</h2>
+            {{!-- Otherwise, everything is valid. --}}
+            {{else}}
+              <h2 class="cell__subtitle">{{localize "DW.ChooseStartingAll"}}</h2>
+            {{/if}}
+            {{!-- Create the grid and loop through moves within the groups. --}}
+            <div class="grid grid-2col">
+              {{#each moves as |move key|}}
+                {{> "systems/paranoidworld/templates/parts/sheet-level-up-move.html" move=move preselect=1}}
+              {{/each}}
+            </div>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+
+    {{#ifor advanced_moves_2 advanced_moves_6}}
+      <section class="cell cell--advanced_moves">
+        <h1 class="cell__title">{{localize "DW.ChooseAdvancedMoves"}}</h1>
+        {{#if advanced_moves_2}}
+          <h2 class="cell__subtitle">{{localize "DW.ChooseAdvanced2"}}</h2>
+          <ul class="selection-list grid grid-2col">
+            {{#each advanced_moves_2 as |move key|}}
+              {{> "systems/paranoidworld/templates/parts/sheet-level-up-move.html" move=move}}
+            {{/each}}
+          </ul>
+        {{/if}}
+
+        {{#if advanced_moves_6}}
+          <h2 class="cell__subtitle">{{localize "DW.ChooseAdvanced6"}}</h2>
+          <ul class="selection-list grid grid-2col">
+            {{#each advanced_moves_6 as |move key|}}
+              {{> "systems/paranoidworld/templates/parts/sheet-level-up-move.html" move=move}}
+            {{/each}}
+          </ul>
+        {{/if}}
+      </section>
+    {{/ifor}}
+
+  </div>
+</form>

@@ -1,0 +1,199 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc"
+    ],
+    "templates": {
+      "base": {
+        "attributes": {
+          "harm": {
+            "value": "Okay"
+          },
+          "ac": {
+            "value": ""
+          },
+          "level": {
+            "value": 1,
+            "min": 0,
+            "max": 10
+          },
+          "xp": {
+            "value": 0,
+            "min": 0,
+            "max": 8
+          }
+        },
+        "details": {
+          "biography": ""
+        }
+      }
+    },
+    "character": {
+      "templates": [
+        "base"
+      ],
+      "attributes": {
+        "weight": {
+          "value": 0,
+          "max": 1
+        },
+        "credits": {
+          "value": 0
+        },
+        "rollFormula": {
+          "value": ""
+        },
+        "forward": {
+          "value": 0
+        },
+        "hold": {
+          "value": 0
+        },
+        "ongoing": {
+          "value": 0
+        },
+        "resource1": {
+          "label": "Custom Resource",
+          "value": 0,
+          "max": 0
+        }
+      },
+      "abilities": {
+        "man": {
+          "value": 10,
+          "min": 3,
+          "mod": 0,
+          "debility": false
+        },
+        "stl": {
+          "value": 10,
+          "min": 3,
+          "mod": 0,
+          "debility": false
+        },
+        "vio": {
+          "value": 10,
+          "min": 3,
+          "mod": 0,
+          "debility": false
+        },
+        "hwr": {
+          "value": 10,
+          "min": 3,
+          "mod": 0,
+          "debility": false
+        },
+        "swr": {
+          "value": 10,
+          "min": 3,
+          "mod": 0,
+          "debility": false
+        },
+        "wwr": {
+          "value": 10,
+          "min": 3,
+          "mod": 0,
+          "debility": false
+        }
+      },
+      "details": {
+        "drive": {
+          "value": "",
+          "description": ""
+        },
+        "look": "",
+        "class": "",
+        "club": {
+          "value": "",
+          "description": ""
+        }
+      }
+    },
+    "npc": {
+      "templates": [
+        "base"
+      ],
+      "tags": [],
+      "tagsString": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "move",
+      "equipment",
+      "bond",
+      "tag",
+      "class"
+    ],
+    "templates": {
+      "base": {
+        "name": "",
+        "description": ""
+      },
+      "move": {
+        "choices": "",
+        "moveType": null,
+        "rollFormula": "",
+        "moveResults": {
+          "failure": {
+            "value": ""
+          },
+          "partial": {
+            "value": ""
+          },
+          "success": {
+            "value": ""
+          }
+        }
+      }
+    },
+    "move": {
+      "templates": [
+        "base",
+        "move"
+      ],
+      "class": null,
+      "rollType": "",
+      "rollMod": 0,
+      "requiresLevel": 0,
+      "requiresMove": "",
+      "moveType": null,
+      "moveGroup": ""
+    },
+    "equipment": {
+      "templates": [
+        "base"
+      ],
+      "class": null,
+      "quantity": 1,
+      "equipped": false,
+      "weight": 0,
+      "uses": 0,
+      "tags": [],
+      "tagsString": "",
+      "itemType": null,
+      "attributes": {}
+    },
+    "bond": {
+      "templates": [
+        "base"
+      ]
+    },
+    "tag": {
+      "templates": [
+        "base"
+      ]
+    },
+    "class": {
+      "templates": [
+        "base"
+      ],
+      "clubs": {},
+      "drives": {},
+      "equipment": {},
+      "harm": "Okay",
+      "load": 10
+    }
+  }
+}

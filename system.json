@@ -1,0 +1,149 @@
+{
+  "name": "paranoidworld",
+  "title": "Paranoid World",
+  "description": "",
+  "version": "0.0.1",
+  "minimumCoreVersion": 9,
+  "compatibleCoreVersion": 9,
+  "templateVersion": 2,
+  "author": "McMustard, based on work by Asacolips, Vasid",
+  "esmodules": [
+    "module/paranoidworld.js"
+  ],
+  "styles": [
+    "styles/lib/tagify.css",
+    "styles/dist/paranoidworld.css"
+  ],
+  "scripts": [
+    "scripts/lib/tagify.min.js"
+  ],
+  "packs": [
+    {
+      "name": "classes",
+      "label": "Classes",
+      "system": "paranoidworld",
+      "path": "./packs/classes.db",
+      "entity": "Item"
+    },
+    {
+      "name": "basic-moves",
+      "label": "Basic Moves",
+      "system": "paranoidworld",
+      "path": "./packs/basic-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "skill-moves",
+      "label": "Skill Moves",
+      "system": "paranoidworld",
+      "path": "./packs/skill-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "troubleshooter-moves",
+      "label": "Troubleshooter Moves",
+      "system": "paranoidworld",
+      "path": "./packs/troubleshooter-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "tags",
+      "label": "Tags",
+      "system": "paranoidworld",
+      "path": "./packs/tags.db",
+      "entity": "Item"
+    },
+    {
+      "name": "equipment-armor",
+      "label": "Equipment (Armor)",
+      "system": "paranoidworld",
+      "path": "./packs/equipment-armor.db",
+      "entity": "Item"
+    },
+    {
+      "name": "equipment-class",
+      "label": "Equipment (Class)",
+      "system": "paranoidworld",
+      "path": "./packs/equipment-class.db",
+      "entity": "Item"
+    },
+    {
+      "name": "equipment-gear",
+      "label": "Equipment (Gear)",
+      "system": "paranoidworld",
+      "path": "./packs/equipment-gear.db",
+      "entity": "Item"
+    },
+    {
+      "name": "equipment-poisons",
+      "label": "Equipment (Poisons)",
+      "system": "paranoidworld",
+      "path": "./packs/equipment-poisons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "equipment-weapons",
+      "label": "Equipment (Weapons)",
+      "system": "paranoidworld",
+      "path": "./packs/equipment-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "label": "Rollable Tables",
+      "entity": "RollTable",
+      "name": "rollable-tables",
+      "path": "packs/rollable-tables.db",
+      "system": "paranoidworld",
+      "package": "world",
+      "absPath": "./packs/rollable-tables.db"
+    },
+    {
+      "label": "GM Moves/Principals",
+      "entity": "JournalEntry",
+      "name": "gm-movesprincipals",
+      "path": "packs/gm-movesprincipals.db",
+      "system": "paranoidworld",
+      "package": "world",
+      "absPath": "./packs/gm-movesprincipals.db"
+    },
+    {
+      "label": "Charts",
+      "entity": "JournalEntry",
+      "name": "charts",
+      "path": "packs/charts.db",
+      "system": "paranoidworld",
+      "package": "world",
+      "absPath": "./packs/charts.db"
+    },
+    {
+      "name": "gm-screen",
+      "label": "GM Screen",
+      "system": "paranoidworld",
+      "path": "./packs/gm-screen.db",
+      "entity": "JournalEntry"
+    },
+    {
+      "name": "tables",
+      "label": "Tables",
+      "system": "paranoidworld",
+      "path": "./packs/tables.db",
+      "entity": "RollTable"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "attributes.harm",
+  "secondaryTokenAttribute": "attributes.xp",
+  "initiative": "1d20",
+  "socket": true,
+  "url": "",
+  "manifest": "",
+  "download": ""
+}
