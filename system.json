@@ -145,5 +145,5 @@
   "socket": true,
   "url": "",
   "manifest": "https://github.com/McMustard/paranoidworld/blob/master/system.json",
-  "download": ""
+  "download": "https://github.com/McMustard/paranoidworld/archive/refs/tags/version-0.0.1.zip"
 }
