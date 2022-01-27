@@ -12,5 +12,6 @@ Dungeon World is published by The Burning Wheel.
 Paranoid World introduces the following NON-trademarks:
     * FeltGrip
     * Press-O-Matic
-The use of the Trademark ™ ("TM") symbol is comical, and any resemblance to
-real trademarks is not intended and is coincidental if it occurs.
+The use of the Trademark ™ ("TM") symbol in conjunction with these (and
+possibly other) terms is done in a comical sense, and any resemblance to real
+trademarks is not intended and is coincidental if it occurs.
