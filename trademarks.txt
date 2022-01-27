@@ -1,0 +1,16 @@
+This is Paranoid World, a game inspired by PARANOIA and Dungeon World, but is
+not a part of either game system. In a way, this is like PARANOIA fan-fiction,
+just in a game form rather than prose. Paranoid World makes reference to
+fictional characters, groups, and phenomena described in PARANOIA. Paranoid
+World uses mechanics derived heavily from Dungeon World.
+
+PARANOIA is a trademark of Eric Goldberg and Greg Costikyan, and is published
+by Mongoose Publishing Ltd.
+
+Dungeon World is published by The Burning Wheel.
+
+Paranoid World introduces the following NON-trademarks:
+    * FeltGrip
+    * Press-O-Matic
+The use of the Trademark ™ ("TM") symbol is comical, and any resemblance to
+real trademarks is not intended and is coincidental if it occurs.
