@@ -124,7 +124,9 @@
       "equipment",
       "bond",
       "tag",
-      "class"
+      "class",
+      "club",
+      "duty"
     ],
     "templates": {
       "base": {
@@ -194,6 +196,22 @@
       "equipment": {},
       "harm": "Okay",
       "load": 10
+    },
+    "club": {
+      "templates": [
+        "base"
+      ],
+      "name": "",
+      "beliefs": "",
+      "friends": "",
+      "enemies": ""
+    },
+    "duty": {
+      "templates": [
+        "base"
+      ],
+      "name": "",
+      "description": ""
     }
   }
 }
