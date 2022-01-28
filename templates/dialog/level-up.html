@@ -12,7 +12,7 @@
 
       {{#if clubs}}
         <section class="cell cell--clubs">
-          <h2 class="cell__title">{{localize "DW.ChooseClub"}}</h2>
+          <h2 class="cell__title">{{localize "PW.ChooseClub"}}</h2>
           <ul class="selection-list">
             {{#each clubs as |club key|}}
               <li>
@@ -31,7 +31,7 @@
 
       {{#if drives}}
         <section class="cell cell--drives">
-          <h2 class="cell__title">{{localize "DW.ChooseDrive"}}</h2>
+          <h2 class="cell__title">{{localize "PW.ChooseDrive"}}</h2>
           <ul class="selection-list">
             {{#each drives as |drive key|}}
               <li>
@@ -50,7 +50,7 @@
 
       {{#if ability_scores}}
         <section class="cell cell--ability-scores">
-          <h2 class="cell__title">{{localize "DW.ChooseAbilityScores"}}</h2>
+          <h2 class="cell__title">{{localize "PW.ChooseAbilityScores"}}</h2>
           <ul class="selection-list">
             {{#each ability_labels as |ability ability_key|}}
             {{!-- {{#each ability_scores as |ability_score key|}} --}}
@@ -80,7 +80,7 @@
     {{else}}
       <div class="flexrow center">
         <section class="cell cell--ability-scores">
-          <h2 class="cell__title">{{localize "DW.ChooseAbilityScoresIncrease"}}</h2>
+          <h2 class="cell__title">{{localize "PW.ChooseAbilityScoresIncrease"}}</h2>
           <ul class="selection-list">
             {{#each ability_labels as |ability ability_key|}}
               <li>
@@ -125,16 +125,16 @@
 
     {{#if starting_moves}}
       <section class="cell cell--starting_moves">
-        <h1 class="cell__title">{{localize "DW.ChooseStartingMoves"}}</h1>
+        <h1 class="cell__title">{{localize "PW.ChooseStartingMoves"}}</h1>
         <ul class="selection-list">
           {{!-- Loop through each group of starting moves. --}}
           {{#each starting_move_groups as |moves group|}}
             {{!-- If a movegroup is defined, that means this should be an OR choice. --}}
             {{#if moves.0.data.data.moveGroup}}
-              <h2 class="cell__subtitle">{{localize "DW.ChooseStartingOne"}}</h2>
+              <h2 class="cell__subtitle">{{localize "PW.ChooseStartingOne"}}</h2>
             {{!-- Otherwise, everything is valid. --}}
             {{else}}
-              <h2 class="cell__subtitle">{{localize "DW.ChooseStartingAll"}}</h2>
+              <h2 class="cell__subtitle">{{localize "PW.ChooseStartingAll"}}</h2>
             {{/if}}
             {{!-- Create the grid and loop through moves within the groups. --}}
             <div class="grid grid-2col">
@@ -149,9 +149,9 @@
 
     {{#ifor advanced_moves_2 advanced_moves_6}}
       <section class="cell cell--advanced_moves">
-        <h1 class="cell__title">{{localize "DW.ChooseAdvancedMoves"}}</h1>
+        <h1 class="cell__title">{{localize "PW.ChooseAdvancedMoves"}}</h1>
         {{#if advanced_moves_2}}
-          <h2 class="cell__subtitle">{{localize "DW.ChooseAdvanced2"}}</h2>
+          <h2 class="cell__subtitle">{{localize "PW.ChooseAdvanced2"}}</h2>
           <ul class="selection-list grid grid-2col">
             {{#each advanced_moves_2 as |move key|}}
               {{> "systems/paranoidworld/templates/parts/sheet-level-up-move.html" move=move}}
@@ -160,7 +160,7 @@
         {{/if}}
 
         {{#if advanced_moves_6}}
-          <h2 class="cell__subtitle">{{localize "DW.ChooseAdvanced6"}}</h2>
+          <h2 class="cell__subtitle">{{localize "PW.ChooseAdvanced6"}}</h2>
           <ul class="selection-list grid grid-2col">
             {{#each advanced_moves_6 as |move key|}}
               {{> "systems/paranoidworld/templates/parts/sheet-level-up-move.html" move=move}}

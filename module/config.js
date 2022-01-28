@@ -1,42 +1,42 @@
-export const DW = {};
+export const PW = {};
 
-DW.abilities = {
-  "man": "DW.AbilityMan",
-  "stl": "DW.AbilityStl",
-  "vio": "DW.AbilityVio",
-  "hwr": "DW.AbilityHwr",
-  "swr": "DW.AbilitySwr",
-  "wwr": "DW.AbilityWwr"
+PW.abilities = {
+  "man": "PW.AbilityMan",
+  "stl": "PW.AbilityStl",
+  "vio": "PW.AbilityVio",
+  "hwr": "PW.AbilityHwr",
+  "swr": "PW.AbilitySwr",
+  "wwr": "PW.AbilityWwr"
 };
 
-DW.debilities = {
-  "man": "DW.DebilityMan",
-  "stl": "DW.DebilityStl",
-  "vio": "DW.DebilityVio",
-  "hwr": "DW.DebilityHwr",
-  "swr": "DW.DebilitySwr",
-  "wwr": "DW.DebilityWwr"
+PW.debilities = {
+  "man": "PW.DebilityMan",
+  "stl": "PW.DebilityStl",
+  "vio": "PW.DebilityVio",
+  "hwr": "PW.DebilityHwr",
+  "swr": "PW.DebilitySwr",
+  "wwr": "PW.DebilityWwr"
 };
 
-DW.rollResults = {
+PW.rollResults = {
   failure: {
     start: null,
     end: 6,
-    label: 'DW.failure'
+    label: 'PW.failure'
   },
   partial: {
     start: 7,
     end: 9,
-    label: 'DW.partial'
+    label: 'PW.partial'
   },
   success: {
     start: 10,
     end: null,
-    label: 'DW.success'
+    label: 'PW.success'
   }
 };
 
-export class DwClassList {
+export class PwClassList {
   static async getClasses(labels_only = true) {
     // First, retrieve any custom or overridden classes so that we can
     // prioritize those.

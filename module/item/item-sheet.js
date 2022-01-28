@@ -1,10 +1,10 @@
-import { DwClassList } from "../config.js";
+import { PwClassList } from "../config.js";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class DwItemSheet extends ItemSheet {
+export class PwItemSheet extends ItemSheet {
 
   /** @inheritdoc */
   constructor(...args) {
@@ -24,7 +24,7 @@ export class DwItemSheet extends ItemSheet {
       submitOnChange: true,
     });
 
-    if (CONFIG.DW.nightmode) {
+    if (CONFIG.PW.nightmode) {
       options.classes.push('nightmode');
     }
 
@@ -81,7 +81,7 @@ export class DwItemSheet extends ItemSheet {
 
     data.dtypes = ["String", "Number", "Boolean"];
     // Add classlist.
-    data.classlist = await DwClassList.getClasses();
+    data.classlist = await PwClassList.getClasses();
 
     // Handle preprocessing for tagify data.
     if (itemData.type == 'equipment') {

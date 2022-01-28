@@ -1,10 +1,10 @@
-import { DwActorSheet } from './actor-sheet.js';
+import { PwActorSheet } from './actor-sheet.js';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class DwActorNpcSheet extends DwActorSheet {
+export class PwActorNpcSheet extends PwActorSheet {
 
   /** @override */
   static get defaultOptions() {
@@ -15,7 +15,7 @@ export class DwActorNpcSheet extends DwActorSheet {
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }]
     });
 
-    if (CONFIG.DW.nightmode) {
+    if (CONFIG.PW.nightmode) {
       options.classes.push('nightmode');
     }
 

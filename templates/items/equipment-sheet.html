@@ -5,14 +5,14 @@
         <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
       </div>
       <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "DW.Common.Name"}}"/></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "PW.Common.Name"}}"/></h1>
       </div>
     </header>
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-navigation sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">{{localize "DW.Common.Description" }}</a>
-        <a class="item" data-tab="details">{{localize "DW.Common.Details" }}</a>
+        <a class="item" data-tab="description">{{localize "PW.Common.Description" }}</a>
+        <a class="item" data-tab="details">{{localize "PW.Common.Details" }}</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -26,42 +26,42 @@
         {{!-- Details Tab --}}
         <div class="tab" data-group="primary" data-tab="details">
           <div class="resource">
-            <label for="tag" class="control-label">{{localize "DW.Tags"}}</label>
-            <div class="help-text"><p>{{localize "DW.TagsHelp" }}</p></div>
+            <label for="tag" class="control-label">{{localize "PW.Tags"}}</label>
+            <div class="help-text"><p>{{localize "PW.TagsHelp" }}</p></div>
             <input class='tags-input-source' placeholder='write some tags' value='{{ data.tags }}'/>
           </div>
           <div class="resource">
-            <label>{{localize "DW.Equipped"}}</label>
+            <label>{{localize "PW.Equipped"}}</label>
             <input type="checkbox" name="data.equipped" {{checked data.equipped}}/>
           </div>
           <div class="resource">
-            <label>{{localize "DW.Quantity"}}</label>
+            <label>{{localize "PW.Quantity"}}</label>
             <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
           </div>
           <div class="resource">
-            <label>{{localize "DW.Uses"}}</label>
+            <label>{{localize "PW.Uses"}}</label>
             <input type="text" name="data.uses" value="{{data.uses}}" data-dtype="Number"/>
           </div>
           <div class="resource">
-            <label>{{localize "DW.Weight"}}</label>
+            <label>{{localize "PW.Weight"}}</label>
             <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/>
           </div>
           <div class="resource">
-            <label>{{localize "DW.ItemType"}}</label>
+            <label>{{localize "PW.ItemType"}}</label>
             <select name="data.itemType" data-dtype="String">
               {{#select data.itemType}}
               <option value="">—</option>
-              <option value="weapon">{{localize "DW.Weapon"}}</option>
-              <option value="armor">{{localize "DW.Armor"}}</option>
-              <option value="dungeongear">{{localize "DW.DungeonGear"}}</option>
-              <option value="poison">{{localize "DW.Poison"}}</option>
-              <option value="service">{{localize "DW.Service"}}</option>
-              <option value="meal">{{localize "DW.Meal"}}</option>
-              <option value="transport">{{localize "DW.Transport"}}</option>
-              <option value="landbuilding">{{localize "DW.LandBuildings"}}</option>
-              <option value="bribe">{{localize "DW.Bribe"}}</option>
-              <option value="giftsfinery">{{localize "DW.GiftsFinery"}}</option>
-              <option value="hoard">{{localize "DW.Hoard"}}</option>
+              <option value="weapon">{{localize "PW.Weapon"}}</option>
+              <option value="armor">{{localize "PW.Armor"}}</option>
+              <option value="dungeongear">{{localize "PW.DungeonGear"}}</option>
+              <option value="poison">{{localize "PW.Poison"}}</option>
+              <option value="service">{{localize "PW.Service"}}</option>
+              <option value="meal">{{localize "PW.Meal"}}</option>
+              <option value="transport">{{localize "PW.Transport"}}</option>
+              <option value="landbuilding">{{localize "PW.LandBuildings"}}</option>
+              <option value="bribe">{{localize "PW.Bribe"}}</option>
+              <option value="giftsfinery">{{localize "PW.GiftsFinery"}}</option>
+              <option value="hoard">{{localize "PW.Hoard"}}</option>
               {{/select}}
             </select>
           </div>

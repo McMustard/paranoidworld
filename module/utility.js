@@ -1,4 +1,4 @@
-export class DwUtility {
+export class PwUtility {
   static cleanClass(string) {
     //Lower case everything
     string = string.toLowerCase();

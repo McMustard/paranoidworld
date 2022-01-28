@@ -1,10 +1,10 @@
-import { DwUtility } from '../utility.js';
+import { PwUtility } from '../utility.js';
 
 /**
  * Extends the basic Actor class for Dungeon World.
  * @extends {Actor}
  */
-export class ActorDw extends Actor {
+export class ActorPw extends Actor {
 
   /**
    * Augment the basic actor data with additional dynamic data.
@@ -32,10 +32,10 @@ export class ActorDw extends Actor {
       // abl.mod = Math.floor(abl.value * 0.4 - (abl.value < 11 ? 3.4 : 4.2));
 
       // Ability modifiers.
-      abl.mod = DwUtility.getAbilityMod(abl.value);
+      abl.mod = PwUtility.getAbilityMod(abl.value);
       // Add labels.
-      abl.label = CONFIG.DW.abilities[a];
-      abl.debilityLabel = CONFIG.DW.debilities[a];
+      abl.label = CONFIG.PW.abilities[a];
+      abl.debilityLabel = CONFIG.PW.debilities[a];
       // Adjust mod based on debility.
       if (abl.debility) {
         abl.mod -= 1;
@@ -185,7 +185,7 @@ export class ActorDw extends Actor {
         }
         // Render it.
         roll.render().then(r => {
-          templateData.rollDw = r;
+          templateData.rollPw = r;
           renderTemplate(template, templateData).then(content => {
             chatData.content = content;
             if (game.dice3d) {
@@ -211,15 +211,15 @@ export class ActorDw extends Actor {
   async _preUpdate(data, options, userId) {
     await super._preUpdate(data, options, userId);
 
-    if (options?.dw) {
-      options.dw.preUpdate = {data: foundry.utils.duplicate(this.data.data)};
+    if (options?.pw) {
+      options.pw.preUpdate = {data: foundry.utils.duplicate(this.data.data)};
     }
   }
 
   /** @override */
   async _onUpdate(data, options, userId) {
     await super._onUpdate(data, options, userId);
-    const context = options?.dw?.preUpdate ?? false;
+    const context = options?.pw?.preUpdate ?? false;
 
     if (!options.diff || !context || context.data === undefined || data.data === undefined) return; // Nothing to do.
 

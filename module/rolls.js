@@ -1,6 +1,6 @@
-import { DwUtility } from "./utility.js";
+import { PwUtility } from "./utility.js";
 
-export class DwRolls {
+export class PwRolls {
 
   constructor() {
     this.actor = null;
@@ -53,10 +53,10 @@ export class DwRolls {
     let data = {};
 
     let dlgOptions = {
-      classes: ['paranoidworld', 'dw-dialog']
+      classes: ['paranoidworld', 'pw-dialog']
     };
 
-    if (CONFIG.DW.nightmode) dlgOptions.classes.push('nightmode');
+    if (CONFIG.PW.nightmode) dlgOptions.classes.push('nightmode');
 
     // Handle item rolls (moves).
     if (item) {
@@ -93,8 +93,8 @@ export class DwRolls {
             };
           }
           new Dialog({
-            title: game.i18n.localize('DW.Dialog.askTitle'),
-            content: `<p>${game.i18n.format('DW.Dialog.askContent', {name: item.name})}`,
+            title: game.i18n.localize('PW.Dialog.askTitle'),
+            content: `<p>${game.i18n.format('PW.Dialog.askContent', {name: item.name})}`,
             buttons: statButtons
           }, dlgOptions).render(true);
         }
@@ -102,13 +102,13 @@ export class DwRolls {
         else if (data.roll == 'bond') {
           let template = 'systems/paranoidworld/templates/chat/roll-dialog.html';
           let dialogData = {
-            title: game.i18n.format('DW.Dialog.bondContent', {name: item.name}),
+            title: game.i18n.format('PW.Dialog.bondContent', {name: item.name}),
             bond: null
           };
           const html = await renderTemplate(template, dialogData);
           return new Promise(resolve => {
             new Dialog({
-              title: game.i18n.localize('DW.Dialog.bondTitle'),
+              title: game.i18n.localize('PW.Dialog.bondTitle'),
               content: html,
               buttons: {
                 submit: {
@@ -127,13 +127,13 @@ export class DwRolls {
         else if (data.roll == 'askmod') {
           let template = 'systems/paranoidworld/templates/chat/roll-dialog.html';
           let dialogData = {
-            title: game.i18n.format('DW.Dialog.askmodContent', {name: item.name}),
+            title: game.i18n.format('PW.Dialog.askmodContent', {name: item.name}),
             bond: null
           };
           const html = await renderTemplate(template, dialogData);
           return new Promise(resolve => {
             new Dialog({
-              title: game.i18n.localize('DW.Dialog.askmodTitle'),
+              title: game.i18n.localize('PW.Dialog.askmodTitle'),
               content: html,
               buttons: {
                 submit: {
@@ -174,7 +174,7 @@ export class DwRolls {
   static async rollMoveExecute(roll, dataset, templateData, form = null) {
     // Render the roll.
     let template = 'systems/paranoidworld/templates/chat/chat-move.html';
-    let dice = DwUtility.getRollFormula('2d6');
+    let dice = PwUtility.getRollFormula('2d6');
     let forwardUsed = false;
     let rollModeUsed = false;
     let resultRangeNeeded = false;
@@ -189,7 +189,7 @@ export class DwRolls {
     if (rollMode === "selfroll") chatData["whisper"] = [game.user.id];
     if (rollMode === "blindroll") chatData["blind"] = true;
     // Handle dice rolls.
-    if (!DwUtility.isEmpty(roll)) {
+    if (!PwUtility.isEmpty(roll)) {
       // Test if the roll is a formula.
       let validRoll = false;
       try {
@@ -282,7 +282,7 @@ export class DwRolls {
         }
 
         // Append the modifiers.
-        let modifiers = DwRolls.getModifiers(this.actor);
+        let modifiers = PwRolls.getModifiers(this.actor);
         formula = `${formula}${modifiers}`;
         forwardUsed = Number(this.actor.data.data.attributes?.forward?.value) != 0;
       }
@@ -294,7 +294,7 @@ export class DwRolls {
         // Add success notification.
         if (resultRangeNeeded || rollType == 'move') {
           // Retrieve the result ranges.
-          let resultRanges = CONFIG.DW.rollResults;
+          let resultRanges = CONFIG.PW.rollResults;
           let resultType = null;
           // Iterate through each result range until we find a match.
           for (let [resultKey, resultRange] of Object.entries(resultRanges)) {
@@ -341,7 +341,7 @@ export class DwRolls {
         // Render it.
         templateData.actor = this.actor.data;
         roll.render().then(r => {
-          templateData.rollDw = r;
+          templateData.rollPw = r;
           templateData.roll = roll;
           renderTemplate(template, templateData).then(content => {
             chatData.content = content;

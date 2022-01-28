@@ -18,18 +18,18 @@
       <section class="sheet-attributes sheet-attributes--npc">
 
 	<div class="cell cell--harm flexrow">
-            <label class="cell__title">{{localize "DW.Harm"}}</label>
+            <label class="cell__title">{{localize "PW.Harm"}}</label>
             {{radioBoxes 'flags.paranoidworld.harmLevels' harmLevels checked=flags.paranoidworld.harmLevels localize=true}}
 	</div>
 
         <div class="cell cell--ac">
-          <label class="cell__title">{{localize "DW.Armor"}}</label>
+          <label class="cell__title">{{localize "PW.Armor"}}</label>
           <input type="text" name="data.attributes.ac.value" value="{{data.attributes.ac.value}}" data-dtype="Number"/>
         </div>
 
         <div class="cell cell--tags">
-          <label for="tag" class="control-label">{{localize "DW.Tags"}}</label>
-          <div class="help-text"><p>{{localize "DW.TagsHelp" }}</p></div>
+          <label for="tag" class="control-label">{{localize "PW.Tags"}}</label>
+          <div class="help-text"><p>{{localize "PW.TagsHelp" }}</p></div>
           <input class='tags-input-source' placeholder='write some tags' value='{{ data.tags }}'/>
         </div>
 
@@ -37,8 +37,8 @@
 
       {{!-- Sheet Tab Navigation --}}
         <nav class="sheet-tabs tabs" data-group="primary">
-          <a class="item" data-tab="description">{{localize "DW.Description"}}</a>
-          <a class="item" data-tab="moves">{{localize "DW.Moves"}}</a>
+          <a class="item" data-tab="description">{{localize "PW.Description"}}</a>
+          <a class="item" data-tab="moves">{{localize "PW.Moves"}}</a>
         </nav>
 
       {{!-- Sheet Body --}}
@@ -47,11 +47,11 @@
         <div class="tab description" data-group="primary" data-tab="description">
           <section class="sheet-tab">
             <div class="cell cell--special-qualities">
-              <label class="cell__title">{{localize "DW.SpecialQualities"}}</label>
+              <label class="cell__title">{{localize "PW.SpecialQualities"}}</label>
               <input type="text" name="data.attributes.specialQualities.value" value="{{data.attributes.specialQualities.value}}" data-dtype="String"/>
             </div>
             <div class="cell cell--description">
-              <label class="cell__title">{{localize "DW.Description"}}</label>
+              <label class="cell__title">{{localize "PW.Description"}}</label>
               {{editor content=data.details.biography target="data.details.biography" button=true owner=owner editable=editable}}
             </div>
           </section>
@@ -62,9 +62,9 @@
 
             <div class="cell cell--basic-moves">
               <h2 class="cell__title">
-                <label>{{localize "DW.MovesBasic"}}</label>
+                <label>{{localize "PW.MovesBasic"}}</label>
                 <div class="item-controls">
-                  <button  type="button" class="item-control item-create" title='{{localize "DW.MoveCreate"}}' data-type="move" data-moveType="basic">
+                  <button  type="button" class="item-control item-create" title='{{localize "PW.MoveCreate"}}' data-type="move" data-moveType="basic">
                     <i class="fas fa-plus"></i>
                   </button>
                 </div>
@@ -80,9 +80,9 @@
 
             <div class="cell cell--special-moves">
               <h2 class="cell__title">
-                <label>{{localize "DW.MovesSpecial"}}</label>
+                <label>{{localize "PW.MovesSpecial"}}</label>
                 <div class="item-controls">
-                  <button  type="button" class="item-control item-create" title='{{localize "DW.MoveCreate"}}' data-type="move" data-moveType="special">
+                  <button  type="button" class="item-control item-create" title='{{localize "PW.MoveCreate"}}' data-type="move" data-moveType="special">
                     <i class="fas fa-plus"></i>
                   </button>
                 </div>

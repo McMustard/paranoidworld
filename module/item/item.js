@@ -1,7 +1,7 @@
-import { DwUtility } from "../utility.js";
-import { DwRolls } from "../rolls.js";
+import { PwUtility } from "../utility.js";
+import { PwRolls } from "../rolls.js";
 
-export class ItemDw extends Item {
+export class ItemPw extends Item {
   /**
    * Augment the basic Item data model with additional dynamic data.
    */
@@ -18,7 +18,7 @@ export class ItemDw extends Item {
       if (itemData.data.equipment) {
         for (let [group_key, group] of Object.entries(itemData.data.equipment)) {
           if (group) {
-            if (DwUtility.isEmpty(group['items'])) {
+            if (PwUtility.isEmpty(group['items'])) {
               group['items'] = [];
               group['objects'] = [];
             }
@@ -32,7 +32,7 @@ export class ItemDw extends Item {
     let obj = null;
     let itemData = this.data;
 
-    let items = await DwUtility.getEquipment(force_reload);
+    let items = await PwUtility.getEquipment(force_reload);
     let equipment = [];
 
     if (itemData.data.equipment) {
@@ -51,6 +51,6 @@ export class ItemDw extends Item {
    * @return {Promise}
    */
    async roll({ configureDialog = true } = {}) {
-    DwRolls.rollMove({actor: this.actor, data: this.data});
+    PwRolls.rollMove({actor: this.actor, data: this.data});
   }
 }

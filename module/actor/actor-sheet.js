@@ -1,12 +1,12 @@
-import { DwClassList } from "../config.js";
-import { DwUtility } from "../utility.js";
-import { DwRolls } from "../rolls.js";
+import { PwClassList } from "../config.js";
+import { PwUtility } from "../utility.js";
+import { PwRolls } from "../rolls.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class DwActorSheet extends ActorSheet {
+export class PwActorSheet extends ActorSheet {
 
   /** @inheritdoc */
   constructor(...args) {
@@ -24,7 +24,7 @@ export class DwActorSheet extends ActorSheet {
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves" }]
     });
 
-    if (CONFIG.DW.nightmode) {
+    if (CONFIG.PW.nightmode) {
       options.classes.push('nightmode');
     }
 
@@ -77,20 +77,20 @@ export class DwActorSheet extends ActorSheet {
 
     // Flags
     data.rollModes = {
-      def: 'DW.Normal',
-      adv: 'DW.Advantage',
-      dis: 'DW.Disadvantage'
+      def: 'PW.Normal',
+      adv: 'PW.Advantage',
+      dis: 'PW.Disadvantage'
     };
 
     data.harmLevels = {
-      okay: 'DW.Okay',
-      snafued: 'DW.Snafued',
-      injured: 'DW.Injured',
-      wounded: 'DW.Wounded',
-      downed: 'DW.Downed',
-      maimed: 'DW.Maimed',
-      killed: 'DW.Killed',
-      vaporized: 'DW.Vaporized'
+      okay: 'PW.Okay',
+      snafued: 'PW.Snafued',
+      injured: 'PW.Injured',
+      wounded: 'PW.Wounded',
+      downed: 'PW.Downed',
+      maimed: 'PW.Maimed',
+      killed: 'PW.Killed',
+      vaporized: 'PW.Vaporized'
     };
 
     // Copy Active Effects
@@ -109,7 +109,7 @@ export class DwActorSheet extends ActorSheet {
 
     // Add classlist.
     if (this.actor.data.type == 'character') {
-      data.data.classlist = await DwClassList.getClasses();
+      data.data.classlist = await PwClassList.getClasses();
 
       let xpSvg = {
         radius: 16,
@@ -140,7 +140,7 @@ export class DwActorSheet extends ActorSheet {
         // Calculate xp bar length.
         let currentXp = Number(data.data.attributes.xp.value);
         let nextLevel = Number(data.data.attributes.xp.max);
-        xpSvg = DwUtility.getProgressCircle({ current: currentXp, max: nextLevel, radius: 16 });
+        xpSvg = PwUtility.getProgressCircle({ current: currentXp, max: nextLevel, radius: 16 });
       }
       else {
         data.data.levelup = false;
@@ -151,12 +151,12 @@ export class DwActorSheet extends ActorSheet {
 
     // Stats.
     data.data.statSettings = {
-      'man': 'DW.MAN',
-      'stl': 'DW.STL',
-      'vio': 'DW.VIO',
-      'hwr': 'DW.HWR',
-      'swr': 'DW.SWR',
-      'wwr': 'DW.WWR'
+      'man': 'PW.MAN',
+      'stl': 'PW.STL',
+      'vio': 'PW.VIO',
+      'hwr': 'PW.HWR',
+      'swr': 'PW.SWR',
+      'wwr': 'PW.WWR'
     };
 
     // Add item icon setting.
@@ -464,10 +464,10 @@ export class DwActorSheet extends ActorSheet {
     const actorData = this.actor.data.data;
     let orig_class_name = actorData.details.class;
     let char_class_name = orig_class_name.trim();
-    let class_list = await DwClassList.getClasses();
-    let class_list_items = await DwClassList.getClasses(false);
+    let class_list = await PwClassList.getClasses();
+    let class_list_items = await PwClassList.getClasses(false);
 
-    let char_class = DwUtility.cleanClass(char_class_name);
+    let char_class = PwUtility.cleanClass(char_class_name);
     let char_level = Number(actorData.attributes.level.value);
 
     // Handle level 1 > 2.
@@ -482,13 +482,13 @@ export class DwActorSheet extends ActorSheet {
         let babele_pack = babele_classes.entries.find(p => p.name == char_class_name);
         if (babele_pack) {
           char_class_name = babele_pack.id;
-          char_class = DwUtility.cleanClass(babele_pack.id);
+          char_class = PwUtility.cleanClass(babele_pack.id);
         }
       }
     }
 
     if (!class_list.includes(orig_class_name) && !class_list.includes(char_class_name)) {
-      ui.notifications.warn(game.i18n.localize('DW.Notifications.noClassWarning'));
+      ui.notifications.warn(game.i18n.localize('PW.Notifications.noClassWarning'));
       return;
     }
 
@@ -499,7 +499,7 @@ export class DwActorSheet extends ActorSheet {
 
     let class_item = class_list_items.find(i => i.data.name == orig_class_name);
     if (!class_item?.data?.data) {
-      ui.notifications.warn(game.i18n.localize('DW.Notifications.noClassWarning'));
+      ui.notifications.warn(game.i18n.localize('PW.Notifications.noClassWarning'));
       return;
     }
     let blurb = class_item ? class_item.data.data.description : null;
@@ -550,7 +550,7 @@ export class DwActorSheet extends ActorSheet {
 
     // Get ability scores.
     let ability_scores = [16, 15, 13, 12, 9, 8];
-    let ability_labels = Object.entries(CONFIG.DW.abilities).map(a => {
+    let ability_labels = Object.entries(CONFIG.PW.abilities).map(a => {
       return {
         short: a[0],
         long: a[1],
@@ -652,11 +652,11 @@ export class DwActorSheet extends ActorSheet {
     const dlg_options = {
       width: 920,
       height: 640,
-      classes: ['dw-level-up', 'paranoidworld', 'sheet'],
+      classes: ['pw-level-up', 'paranoidworld', 'sheet'],
       resizable: true
     };
 
-    if (CONFIG.DW.nightmode) {
+    if (CONFIG.PW.nightmode) {
       dlg_options.classes.push('nightmode');
     }
 
@@ -668,12 +668,12 @@ export class DwActorSheet extends ActorSheet {
       buttons: {
         cancel: {
           icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize("DW.Cancel"),
+          label: game.i18n.localize("PW.Cancel"),
           callback: () => null
         },
         submit: {
           icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize("DW.Confirm"),
+          label: game.i18n.localize("PW.Confirm"),
           callback: dlg => this._onLevelUpSave(dlg, this.actor, itemData, this)
           // callback: dlg => _onImportPower(dlg, this.actor)
         }
@@ -775,12 +775,12 @@ export class DwActorSheet extends ActorSheet {
 
     //Set Level 1 bonds
     if (Number(actor.data.data.attributes.xp.value) == 0) {
-      let theclass = DwUtility.cleanClass(actor.data.data.details.class);
+      let theclass = PwUtility.cleanClass(actor.data.data.details.class);
       let newbonds = [];
 
       for (let i = 1; i < 7; i++) {
-        if (game.i18n.localize("DW." + theclass + ".Bond" + i ) != "DW." + theclass + ".Bond" + i ) {
-          newbonds.push({name: game.i18n.localize("DW." + theclass + ".Bond" + i), type: 'bond', data: ''});
+        if (game.i18n.localize("PW." + theclass + ".Bond" + i ) != "PW." + theclass + ".Bond" + i ) {
+          newbonds.push({name: game.i18n.localize("PW." + theclass + ".Bond" + i), type: 'bond', data: ''});
          }
       }
 
@@ -796,7 +796,7 @@ export class DwActorSheet extends ActorSheet {
       if (data['abilities.vio.value']) {
         violence = data['abilities.vio.value'];
       }
-      data['attributes.weight.max'] = Number(itemData.class_item.data.data.load) + Number(DwUtility.getAbilityMod(violence));
+      data['attributes.weight.max'] = Number(itemData.class_item.data.data.load) + Number(PwUtility.getAbilityMod(violence));
     }
 
     if (new_moves) {
@@ -865,7 +865,7 @@ export class DwActorSheet extends ActorSheet {
     let flavorText = null;
     let templateData = {};
 
-    let dice = DwUtility.getRollFormula('2d6');
+    let dice = PwUtility.getRollFormula('2d6');
 
     // Handle rolls coming directly from the ability score.
     if ($(a).hasClass('ability-rollable') && data.roll) {
@@ -880,7 +880,7 @@ export class DwActorSheet extends ActorSheet {
       };
 
       // this.rollMove(formula, actorData, data, templateData);
-      DwRolls.rollMove({actor: this.actor, data: null, formula: formula, templateData: templateData});
+      PwRolls.rollMove({actor: this.actor, data: null, formula: formula, templateData: templateData});
     }
     else if (itemId != undefined) {
       await item.roll();
@@ -916,7 +916,7 @@ export class DwActorSheet extends ActorSheet {
     const type = header.dataset.type;
     const data = duplicate(header.dataset);
     data.moveType = data.movetype;
-    const name = type == 'bond' ? game.i18n.localize("DW.BondDefault") : `New ${type.capitalize()}`;
+    const name = type == 'bond' ? game.i18n.localize("PW.BondDefault") : `New ${type.capitalize()}`;
     const itemData = {
       name: name,
       type: type,

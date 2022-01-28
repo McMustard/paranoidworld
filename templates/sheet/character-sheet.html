@@ -13,11 +13,11 @@
                 {{/each}}
               </datalist>
               <div class="flex-item flex-item--level">
-                <label for="data.atributes.level.value">{{ localize "DW.Level" }}</label>
+                <label for="data.atributes.level.value">{{ localize "PW.Level" }}</label>
                 <input name="data.attributes.level.value" type="text" value="{{data.attributes.level.value}}" placeholder="Level" data-dtype="Number"/>
               </div>
               <div class="flex-item flex-item--xp">
-                <label for="data.attributes.xp.value">{{ localize "DW.XP" }}</label>
+                <label for="data.attributes.xp.value">{{ localize "PW.XP" }}</label>
                 <input name="data.attributes.xp.value" type="text" value="{{data.attributes.xp.value}}" placeholder="XP" data-dtype="Number"/>
                 {{{progressCircle data.xpSvg}}}
               </div>
@@ -45,28 +45,28 @@
           </div>
 
           <div class="cell cell--look">
-            <label class="cell__title">{{localize "DW.Look"}}</label>
+            <label class="cell__title">{{localize "PW.Look"}}</label>
             {{editor content=data.details.look target="data.details.look" button=true owner=owner editable=editable}}
           </div>
 
           <div class="cell cell--drive">
-            <label class="cell__title">{{localizeOverride "DW.Drive" "driveSingle"}}</label>
+            <label class="cell__title">{{localizeOverride "PW.Drive" "driveSingle"}}</label>
             <input type="text" class="input input--title" name="data.details.drive.value" value="{{data.details.drive.value}}" data-dtype="String"/>
             {{editor content=data.details.drive.description target="data.details.drive.description" button=true owner=owner editable=editable}}
           </div>
 
           <div class="cell cell--club">
-            <label class="cell__title">{{localizeOverride "DW.Club" "clubSingle"}}</label>
+            <label class="cell__title">{{localizeOverride "PW.Club" "clubSingle"}}</label>
             <input type="text" class="input input--title" name="data.details.club.value" value="{{data.details.club.value}}" data-dtype="String"/>
             {{editor content=data.details.club.description target="data.details.club.description" button=true owner=owner editable=editable}}
           </div>
 
           <div class="cell cell--bonds">
             <div class="cell__title">
-              <label>{{localizeOverride "DW.Bonds" "bondPlural"}}</label>
+              <label>{{localizeOverride "PW.Bonds" "bondPlural"}}</label>
               <div class="item-controls">
-                <button  type="button" class="item-control item-create" title='{{localize "DW.AddBond"}}' data-type="bond">
-                  <i class="fas fa-plus"></i> <span class="visually-hidden">{{localize "DW.AddBond"}}</span>
+                <button  type="button" class="item-control item-create" title='{{localize "PW.AddBond"}}' data-type="bond">
+                  <i class="fas fa-plus"></i> <span class="visually-hidden">{{localize "PW.AddBond"}}</span>
                 </button>
               </div>
             </div>
@@ -92,12 +92,12 @@
         <section class="sheet-attributes">
 
           <div class="cell cell--ac">
-            <label class="cell__title">{{localize "DW.Armor"}}<i class="fas fa-shield-alt attribute-icon"></i></label>
+            <label class="cell__title">{{localize "PW.Armor"}}<i class="fas fa-shield-alt attribute-icon"></i></label>
             <input type="text" name="data.attributes.ac.value" value="{{data.attributes.ac.value}}" data-dtype="String"/>
           </div>
 
           <div class="cell cell--weight">
-            <label for="data.attributes.weight.value" class="cell__title">{{localize "DW.Weight"}}<i class="fas fa-weight-hanging attribute-icon"></i></label>
+            <label for="data.attributes.weight.value" class="cell__title">{{localize "PW.Weight"}}<i class="fas fa-weight-hanging attribute-icon"></i></label>
             <div class="cell__counter">
               <input class="disabled" type="text" name="data.attributes.weight.value" value="{{data.attributes.weight.value}}" data-dtype="Number" readonly/>
               <span> / </span>
@@ -106,7 +106,7 @@
           </div>
 
           <div class="cell cell--credits">
-            <label class="cell__title">{{localize "DW.Credits"}}<i class="fas fa-credits attribute-icon"></i></label>
+            <label class="cell__title">{{localize "PW.Credits"}}<i class="fas fa-credits attribute-icon"></i></label>
             <div class="cell__wrapper">
               <button type="button" class="resource-control resource-decrease" data-action="decrease" data-attr="attributes.credits.value">-</button>
               <input type="text" name="data.attributes.credits.value" value="{{data.attributes.credits.value}}" data-dtype="Number"/>
@@ -115,7 +115,7 @@
           </div>
 
 	  <div class="cell cell--harm flexrow">
-              <label class="cell__title">{{localize "DW.Harm"}}</label>
+              <label class="cell__title">{{localize "PW.Harm"}}</label>
               {{radioBoxes 'flags.paranoidworld.harmLevels' harmLevels checked=flags.paranoidworld.harmLevels localize=true}}
 	  </div>
 
@@ -136,9 +136,9 @@
 
         {{!-- Sheet Tab Navigation --}}
         <nav class="sheet-tabs tabs" data-group="primary">
-            <a class="item" data-tab="description">{{localize "DW.Description"}}</a>
-            <a class="item" data-tab="moves">{{localize "DW.Moves"}}</a>
-            <a class="item" data-tab="equipment">{{localize "DW.Equipment"}}</a>
+            <a class="item" data-tab="description">{{localize "PW.Description"}}</a>
+            <a class="item" data-tab="moves">{{localize "PW.Moves"}}</a>
+            <a class="item" data-tab="equipment">{{localize "PW.Equipment"}}</a>
         </nav>
 
         {{!-- Sheet Body --}}
@@ -148,7 +148,7 @@
             <div class="tab description" data-group="primary" data-tab="description">
               <div class="sheet-tab">
                 <div class="cell cell--bio">
-                  <label class="cell__title">{{localize "DW.Biography"}}</label>
+                  <label class="cell__title">{{localize "PW.Biography"}}</label>
                   {{editor content=data.details.biography target="data.details.biography" button=true owner=owner editable=editable}}
                 </div>
               </div>
@@ -166,7 +166,7 @@
 
                 <section class="sheet-resources">
                   <div class="cell cell--forward">
-                    <label class="cell__title">{{localize "DW.Forward"}}</label>
+                    <label class="cell__title">{{localize "PW.Forward"}}</label>
                     <div class="cell__wrapper">
                       <button  type="button" class="resource-control resource-decrease" data-action="decrease" data-attr="attributes.forward.value">-</button>
                       <input type="number" name="data.attributes.forward.value" value="{{data.attributes.forward.value}}" data-dtype="Number"/>
@@ -175,7 +175,7 @@
                   </div>
 
                   <div class="cell cell--ongoing">
-                    <label class="cell__title">{{localize "DW.Ongoing"}}</label>
+                    <label class="cell__title">{{localize "PW.Ongoing"}}</label>
                     <div class="cell__wrapper">
                       <button  type="button" class="resource-control resource-decrease" data-action="decrease" data-attr="attributes.ongoing.value">-</button>
                       <input type="number" name="data.attributes.ongoing.value" value="{{data.attributes.ongoing.value}}" data-dtype="Number"/>
@@ -184,7 +184,7 @@
                   </div>
 
                   <div class="cell cell--hold">
-                    <label class="cell__title">{{localize "DW.Hold"}}</label>
+                    <label class="cell__title">{{localize "PW.Hold"}}</label>
                     <div class="cell__wrapper">
                       <button  type="button" class="resource-control resource-decrease" data-action="decrease" data-attr="attributes.hold.value">-</button>
                       <input type="number" name="data.attributes.hold.value" value="{{data.attributes.hold.value}}" data-dtype="Number"/>
@@ -210,23 +210,23 @@
                   </div>
 
                   <div class="cell cell--roll-formula">
-                    <label class="cell__title">{{localize "DW.RollFormula"}}</label>
+                    <label class="cell__title">{{localize "PW.RollFormula"}}</label>
                     <div class="cell__wrapper">
                       <input type="text" name="data.attributes.rollFormula.value" value="{{data.attributes.rollFormula.value}}" placeholder="2d6" data-dtype="String"/>
                     </div>
                   </div>
 
                   <div class="cell cell--roll-mode flexrow">
-                    <label class="cell__title">{{localize "DW.RollMode"}}</label>
+                    <label class="cell__title">{{localize "PW.RollMode"}}</label>
                     {{radioBoxes 'flags.paranoidworld.rollMode' rollModes checked=flags.paranoidworld.rollMode localize=true}}
                   </div>
                 </section>
 
                 <div class="cell cell--basic-moves">
                   <h2 class="cell__title">
-                    <label>{{localize "DW.MovesBasic"}}</label>
+                    <label>{{localize "PW.MovesBasic"}}</label>
                     <div class="item-controls">
-                      <button  type="button" class="item-control item-create" title='{{localize "DW.MoveCreate"}}' data-type="move" data-moveType="basic">
+                      <button  type="button" class="item-control item-create" title='{{localize "PW.MoveCreate"}}' data-type="move" data-moveType="basic">
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
@@ -242,9 +242,9 @@
 
                 <div class="cell cell--starting-moves">
                   <h2 class="cell__title">
-                    <label>{{localize "DW.MovesStarting"}}</label>
+                    <label>{{localize "PW.MovesStarting"}}</label>
                     <div class="item-controls">
-                      <button  type="button" class="item-control item-create" title='{{localize "DW.MoveCreate"}}' data-type="move" data-moveType="starting">
+                      <button  type="button" class="item-control item-create" title='{{localize "PW.MoveCreate"}}' data-type="move" data-moveType="starting">
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
@@ -260,9 +260,9 @@
 
                 <div class="cell cell--advanced-moves">
                   <h2 class="cell__title">
-                    <label>{{localize "DW.MovesAdvanced"}}</label>
+                    <label>{{localize "PW.MovesAdvanced"}}</label>
                     <div class="item-controls">
-                      <button  type="button" class="item-control item-create" title='{{localize "DW.MoveCreate"}}' data-type="move" data-moveType="advanced">
+                      <button  type="button" class="item-control item-create" title='{{localize "PW.MoveCreate"}}' data-type="move" data-moveType="advanced">
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
@@ -278,9 +278,9 @@
 
                 <div class="cell cell--special-moves">
                   <h2 class="cell__title">
-                    <label>{{localize "DW.MovesSpecial"}}</label>
+                    <label>{{localize "PW.MovesSpecial"}}</label>
                     <div class="item-controls">
-                      <button  type="button" class="item-control item-create" title='{{localize "DW.MoveCreate"}}' data-type="move" data-moveType="special">
+                      <button  type="button" class="item-control item-create" title='{{localize "PW.MoveCreate"}}' data-type="move" data-moveType="special">
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
@@ -296,9 +296,9 @@
 
                 <div class="cell cell--other-moves">
                   <h2 class="cell__title">
-                    <label>{{localize "DW.MovesOther"}}</label>
+                    <label>{{localize "PW.MovesOther"}}</label>
                     <div class="item-controls">
-                      <button  type="button" class="item-control item-create" title='{{localize "DW.MoveCreate"}}' data-type="move">
+                      <button  type="button" class="item-control item-create" title='{{localize "PW.MoveCreate"}}' data-type="move">
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
@@ -325,9 +325,9 @@
                   </section>
 
                   <h2 class="cell__title">
-                    <label>{{localize "DW.Equipment"}}</label>
+                    <label>{{localize "PW.Equipment"}}</label>
                     <div class="item-controls">
-                      <button  type="button" class="item-control item-create" title='{{localize "DW.Equipment"}}' data-type="equipment">
+                      <button  type="button" class="item-control item-create" title='{{localize "PW.Equipment"}}' data-type="equipment">
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
@@ -344,17 +344,17 @@
                           </h4>
 
                           <div class="item-meta tags">
-                            {{#if item.data.equipped }}<span class="tag equipped" data-action="equipped">{{localize "DW.Equipped"}}</span>{{/if}}
-                            {{#if item.data.uses }}<a class="tag counter uses" data-action="uses">{{localize "DW.Uses"}}: {{item.data.uses}}</a>{{/if}}
-                            {{#if item.data.quantity }}<a class="tag counter quantity" data-action="quantity">{{localize "DW.Qty"}}: {{item.data.quantity}}</a>{{/if}}
-                            {{#if item.data.weight }}<span class="tag">{{localize "DW.Wt"}}: {{item.data.weight}}</span>{{/if}}
+                            {{#if item.data.equipped }}<span class="tag equipped" data-action="equipped">{{localize "PW.Equipped"}}</span>{{/if}}
+                            {{#if item.data.uses }}<a class="tag counter uses" data-action="uses">{{localize "PW.Uses"}}: {{item.data.uses}}</a>{{/if}}
+                            {{#if item.data.quantity }}<a class="tag counter quantity" data-action="quantity">{{localize "PW.Qty"}}: {{item.data.quantity}}</a>{{/if}}
+                            {{#if item.data.weight }}<span class="tag">{{localize "PW.Wt"}}: {{item.data.weight}}</span>{{/if}}
                           </div>
                           <div class="item-controls">
                               <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
                           </div>
                           <div class="item-description">
-                            {{#if item.data.tags}}{{{dwTags item.data.tags}}}{{/if}}
+                            {{#if item.data.tags}}{{{pwTags item.data.tags}}}{{/if}}
                             <div class="description">{{{enrichText item.data.description ../rollData}}}</div>
                           </div>
                       </li>

@@ -1,5 +1,5 @@
 export const displayChatActionButtons = function(message, html, data) {
-  const chatCard = html.find(".dw.chat-card");
+  const chatCard = html.find(".pw.chat-card");
 
   if ( chatCard.length > 0 ) {
     // If the user is the message author or the actor owner, proceed.
@@ -83,7 +83,7 @@ async function _chatActionMarkXp(actor, message) {
   let $button = $content.find('.xp-button');
 
   // Replace the button.
-  let newButton = `<span class="xp-button button button-disabled">${game.i18n.localize("DW.XpMarked")} <i class="fas fa-check"></i></span>`;
+  let newButton = `<span class="xp-button button button-disabled">${game.i18n.localize("PW.XpMarked")} <i class="fas fa-check"></i></span>`;
   $button.replaceWith($(newButton));
 
   if (message.isAuthor || game.user.isGM) {

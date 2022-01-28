@@ -1,5 +1,5 @@
 // Example of how to import compendium content.
-async function importDwTags(content) {
+async function importPwTags(content) {
   // Reference a Compendium pack by it's callection ID
   const pack = game.packs.find(p => p.collection === `dungeonworld.tags`);
 
@@ -43,4 +43,4 @@ const content = [
   { "name": "Clumsy", "type": "tag" }
 ];
 
-importDwTags(content);
+importPwTags(content);

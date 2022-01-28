@@ -496,9 +496,9 @@ a.tag:hover, a.tag:focus {
     width: 100%;
     height: auto;
     margin: auto; }
-  .vtt .sidebar-tab .directory-list--dw {
+  .vtt .sidebar-tab .directory-list--pw {
     padding: 0; }
-    .vtt .sidebar-tab .directory-list--dw .directory-item {
+    .vtt .sidebar-tab .directory-list--pw .directory-item {
       border-bottom: 1px solid rgba(0, 0, 0, 0.25);
       line-height: 1;
       -webkit-transition: all ease-in-out 0.25s;
@@ -507,7 +507,7 @@ a.tag:hover, a.tag:focus {
       position: relative;
       padding-left: 5px;
       padding-right: 5px; }
-      .vtt .sidebar-tab .directory-list--dw .directory-item::after {
+      .vtt .sidebar-tab .directory-list--pw .directory-item::after {
         content: '';
         display: block;
         position: absolute;
@@ -522,15 +522,15 @@ a.tag:hover, a.tag:focus {
         -o-transition: all ease-in-out 0.25s;
         transition: all ease-in-out 0.25s;
         pointer-events: none; }
-      .vtt .sidebar-tab .directory-list--dw .directory-item.hidden {
+      .vtt .sidebar-tab .directory-list--pw .directory-item.hidden {
         opacity: 0.5; }
-      .vtt .sidebar-tab .directory-list--dw .directory-item.grid-6col {
+      .vtt .sidebar-tab .directory-list--pw .directory-item.grid-6col {
         grid-template-columns: 11% 32% 14% 12% 17% 14%;
         gap: 0%; }
-      .vtt .sidebar-tab .directory-list--dw .directory-item.grid-5col {
+      .vtt .sidebar-tab .directory-list--pw .directory-item.grid-5col {
         grid-template-columns: 11% 33% 14% 12% 30%;
         gap: 0%; }
-    .vtt .sidebar-tab .directory-list--dw .drop-hover::after {
+    .vtt .sidebar-tab .directory-list--pw .drop-hover::after {
       width: 100%; }
   .vtt .sidebar-tab .ct-label {
     text-align: center; }

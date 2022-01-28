@@ -5,18 +5,18 @@
  */
 
 // Import Modules
-import { DW } from "./config.js";
-import { DwClassList } from "./config.js";
-import { ActorDw } from "./actor/actor.js";
-import { ItemDw } from "./item/item.js";
-import { DwItemSheet } from "./item/item-sheet.js";
-import { DwActorSheet } from "./actor/actor-sheet.js";
-import { DwActorNpcSheet } from "./actor/actor-npc-sheet.js";
-import { DwClassItemSheet } from "./item/class-item-sheet.js";
-import { DwRegisterHelpers } from "./handlebars.js";
+import { PW } from "./config.js";
+import { PwClassList } from "./config.js";
+import { ActorPw } from "./actor/actor.js";
+import { ItemPw } from "./item/item.js";
+import { PwItemSheet } from "./item/item-sheet.js";
+import { PwActorSheet } from "./actor/actor-sheet.js";
+import { PwActorNpcSheet } from "./actor/actor-npc-sheet.js";
+import { PwClassItemSheet } from "./item/class-item-sheet.js";
+import { PwRegisterHelpers } from "./handlebars.js";
 import { preloadHandlebarsTemplates } from "./templates.js";
-import { DwUtility } from "./utility.js";
-import { MigrateDw } from "./migrate/migrate.js";
+import { PwUtility } from "./utility.js";
+import { MigratePw } from "./migrate/migrate.js";
 
 import * as chat from "./chat.js";
 
@@ -28,38 +28,38 @@ Hooks.once("init", async function() {
   console.log(`Initializing Paranoid World!`);
 
   game.paranoidworld = {
-    ActorDw,
-    ItemDw,
+    ActorPw,
+    ItemPw,
     rollItemMacro,
-    DwUtility,
-    MigrateDw,
+    PwUtility,
+    MigratePw,
   };
 
   // TODO: Extend the combat class.
-  // CONFIG.Combat.entityClass = CombatDw;
+  // CONFIG.Combat.entityClass = CombatPw;
 
-  CONFIG.DW = DW;
-  CONFIG.Actor.documentClass = ActorDw;
-  CONFIG.Item.documentClass = ItemDw;
+  CONFIG.PW = PW;
+  CONFIG.Actor.documentClass = ActorPw;
+  CONFIG.Item.documentClass = ItemPw;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("paranoidworld", DwActorSheet, {
+  Actors.registerSheet("paranoidworld", PwActorSheet, {
     types: ['character'],
     makeDefault: true
   });
-  Actors.registerSheet("paranoidworld", DwActorNpcSheet, {
+  Actors.registerSheet("paranoidworld", PwActorNpcSheet, {
     types: ['npc'],
     makeDefault: true
   });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("paranoidworld", DwItemSheet, { makeDefault: false });
-  Items.registerSheet("paranoidworld", DwClassItemSheet, {
+  Items.registerSheet("paranoidworld", PwItemSheet, { makeDefault: false });
+  Items.registerSheet("paranoidworld", PwClassItemSheet, {
     types: ['class'],
     makeDefault: true
   });
 
-  DwRegisterHelpers.init();
+  PwRegisterHelpers.init();
 
   /**
    * Track the system version upon which point a migration was last applied
@@ -74,8 +74,8 @@ Hooks.once("init", async function() {
 
   // Configurable system settings.
   game.settings.register("paranoidworld", "xpFormula", {
-    name: game.i18n.localize("DW.Settings.xpFormula.name"),
-    hint: game.i18n.localize("DW.Settings.xpFormula.hint"),
+    name: game.i18n.localize("PW.Settings.xpFormula.name"),
+    hint: game.i18n.localize("PW.Settings.xpFormula.hint"),
     scope: "world",
     config: true,
     type: String,
@@ -83,8 +83,8 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "advForward", {
-    name: game.i18n.localize("DW.Settings.advForward.name"),
-    hint: game.i18n.localize("DW.Settings.advForward.hint"),
+    name: game.i18n.localize("PW.Settings.advForward.name"),
+    hint: game.i18n.localize("PW.Settings.advForward.hint"),
     scope: 'world',
     config: true,
     type: Boolean,
@@ -93,8 +93,8 @@ Hooks.once("init", async function() {
 
   // TODO: Remove this setting.
   game.settings.register("paranoidworld", "itemIcons", {
-    name: game.i18n.localize("DW.Settings.itemIcons.name"),
-    hint: game.i18n.localize("DW.Settings.itemIcons.hint"),
+    name: game.i18n.localize("PW.Settings.itemIcons.name"),
+    hint: game.i18n.localize("PW.Settings.itemIcons.hint"),
     scope: 'client',
     config: false,
     type: Boolean,
@@ -102,8 +102,8 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "nightmode", {
-    name: game.i18n.localize("DW.Settings.nightmode.name"),
-    hint: game.i18n.localize("DW.Settings.nightmode.hint"),
+    name: game.i18n.localize("PW.Settings.nightmode.name"),
+    hint: game.i18n.localize("PW.Settings.nightmode.hint"),
     scope: 'client',
     config: true,
     type: Boolean,
@@ -111,8 +111,8 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "driveSingle", {
-    name: game.i18n.localize("DW.Settings.driveSingle.name"),
-    hint: game.i18n.localize("DW.Settings.driveSingle.hint"),
+    name: game.i18n.localize("PW.Settings.driveSingle.name"),
+    hint: game.i18n.localize("PW.Settings.driveSingle.hint"),
     scope: 'world',
     config: true,
     type: String,
@@ -120,8 +120,8 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "drivePlural", {
-    name: game.i18n.localize("DW.Settings.drivePlural.name"),
-    hint: game.i18n.localize("DW.Settings.drivePlural.hint"),
+    name: game.i18n.localize("PW.Settings.drivePlural.name"),
+    hint: game.i18n.localize("PW.Settings.drivePlural.hint"),
     scope: 'world',
     config: true,
     type: String,
@@ -129,8 +129,8 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "clubSingle", {
-    name: game.i18n.localize("DW.Settings.clubSingle.name"),
-    hint: game.i18n.localize("DW.Settings.clubSingle.hint"),
+    name: game.i18n.localize("PW.Settings.clubSingle.name"),
+    hint: game.i18n.localize("PW.Settings.clubSingle.hint"),
     scope: 'world',
     config: true,
     type: String,
@@ -138,8 +138,8 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "clubPlural", {
-    name: game.i18n.localize("DW.Settings.clubPlural.name"),
-    hint: game.i18n.localize("DW.Settings.clubPlural.hint"),
+    name: game.i18n.localize("PW.Settings.clubPlural.name"),
+    hint: game.i18n.localize("PW.Settings.clubPlural.hint"),
     scope: 'world',
     config: true,
     type: String,
@@ -147,8 +147,8 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "bondSingle", {
-    name: game.i18n.localize("DW.Settings.bondSingle.name"),
-    hint: game.i18n.localize("DW.Settings.bondSingle.hint"),
+    name: game.i18n.localize("PW.Settings.bondSingle.name"),
+    hint: game.i18n.localize("PW.Settings.bondSingle.hint"),
     scope: 'world',
     config: true,
     type: String,
@@ -156,15 +156,15 @@ Hooks.once("init", async function() {
   });
 
   game.settings.register("paranoidworld", "bondPlural", {
-    name: game.i18n.localize("DW.Settings.bondPlural.name"),
-    hint: game.i18n.localize("DW.Settings.bondPlural.hint"),
+    name: game.i18n.localize("PW.Settings.bondPlural.name"),
+    hint: game.i18n.localize("PW.Settings.bondPlural.hint"),
     scope: 'world',
     config: true,
     type: String,
     default: ''
   });
 
-  DwUtility.replaceRollData();
+  PwUtility.replaceRollData();
 
   // Preload template partials.
   preloadHandlebarsTemplates();
@@ -172,25 +172,25 @@ Hooks.once("init", async function() {
 
 Hooks.once("ready", async function() {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on("hotbarDrop", (bar, data, slot) => createDwMacro(data, slot));
+  Hooks.on("hotbarDrop", (bar, data, slot) => createPwMacro(data, slot));
 
-  DW.classlist = await DwClassList.getClasses();
-  CONFIG.DW = DW;
+  PW.classlist = await PwClassList.getClasses();
+  CONFIG.PW = PW;
 
   // Add a lang class to the body.
   const lang = game.settings.get('core', 'language');
   $('html').addClass(`lang-${lang}`);
 
   // Run migrations.
-  MigrateDw.runMigration();
+  MigratePw.runMigration();
 
   // Update config.
-  for (let [k,v] of Object.entries(CONFIG.DW.rollResults)) {
-    CONFIG.DW.rollResults[k].label = game.i18n.localize(v.label);
+  for (let [k,v] of Object.entries(CONFIG.PW.rollResults)) {
+    CONFIG.PW.rollResults[k].label = game.i18n.localize(v.label);
   }
 
   // Add nightmode class.
-  CONFIG.DW.nightmode = game.settings.get('paranoidworld', 'nightmode') ?? false;
+  CONFIG.PW.nightmode = game.settings.get('paranoidworld', 'nightmode') ?? false;
 
   // Handle sockets.
   game.socket.on('system.paranoidworld', (data) => {
@@ -260,7 +260,7 @@ Hooks.once("setup", function() {
     "abilities", "debilities"
   ];
   for (let o of toLocalize) {
-    CONFIG.DW[o] = Object.entries(CONFIG.DW[o]).reduce((obj, e) => {
+    CONFIG.PW[o] = Object.entries(CONFIG.PW[o]).reduce((obj, e) => {
       obj[e[0]] = game.i18n.localize(e[1]);
       return obj;
     }, {});
@@ -317,7 +317,7 @@ Hooks.on('createActor', async (actor, options, id) => {
     });
 
     // Add default look.
-    updates['data.details.look'] = game.i18n.localize('DW.DefaultLook');
+    updates['data.details.look'] = game.i18n.localize('PW.DefaultLook');
 
     // Link the token.
     updates['token.actorLink'] = true;
@@ -346,7 +346,7 @@ Hooks.on('createActor', async (actor, options, id) => {
 // Update the item list on new item creation.
 Hooks.on('createItem', async (item, options, id) => {
   if (item.data.type == 'equipment') {
-    DwUtility.getEquipment(true);
+    PwUtility.getEquipment(true);
   }
 })
 
@@ -409,7 +409,7 @@ Hooks.on('renderDialog', (dialog, html, options) => {
  * @param {number} slot     The hotbar slot to use
  * @returns {Promise}
  */
-async function createDwMacro(data, slot) {
+async function createPwMacro(data, slot) {
   if (data.type !== "Item") return;
   if (!("data" in data)) return ui.notifications.warn("You can only create macro buttons for owned Items");
   const item = data.data;

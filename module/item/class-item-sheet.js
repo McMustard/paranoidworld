@@ -1,11 +1,11 @@
-import { DwItemSheet } from './item-sheet.js';
-import { DwUtility } from "../utility.js";
+import { PwItemSheet } from './item-sheet.js';
+import { PwUtility } from "../utility.js";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class DwClassItemSheet extends DwItemSheet {
+export class PwClassItemSheet extends PwItemSheet {
 
   /** @override */
   static get defaultOptions() {
@@ -117,7 +117,7 @@ export class DwClassItemSheet extends DwItemSheet {
     // Filter items.
     let existing_items = [];
 
-    if (!DwUtility.isEmpty(originalData.data.equipment[groupId]['items'])) {
+    if (!PwUtility.isEmpty(originalData.data.equipment[groupId]['items'])) {
       existing_items = originalData.data.equipment[groupId]['items'];
     }
     else {

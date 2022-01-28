@@ -6,7 +6,7 @@
         <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
       </div>
       <div class="header-fields">
-        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "DW.Common.Name"}}"/></h1>
+        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "PW.Common.Name"}}"/></h1>
       </div>
     </header>
 
@@ -14,27 +14,27 @@
     <section class="sheet-body">
 
       <div class="resource">
-        <label>{{localize "DW.Beliefs"}}</label>
+        <label>{{localize "PW.Beliefs"}}</label>
 	{{editor content=data.beliefs target="data.beliefs" button=true owner=owner editable=editable}}
       </div>
 
       <div class="resource">
-        <label>{{localize "DW.Friends"}}</label>
+        <label>{{localize "PW.Friends"}}</label>
         <input type="text" name="data.friends" value="{{data.friends}}" data-dtype="String"/>
       </div>
 
       <div class="resource">
-        <label>{{localize "DW.Enemies"}}</label>
+        <label>{{localize "PW.Enemies"}}</label>
         <input type="text" name="data.enemies" value="{{data.enemies}}" data-dtype="String"/>
       </div>
 
       <div class="resource">
-        <label>{{localize "DW.Signal"}}</label>
+        <label>{{localize "PW.Signal"}}</label>
         <input type="text" name="data.signal" value="{{data.signal}}" data-dtype="String"/>
       </div>
 
       <div class="resource">
-        <label>{{localize "DW.Response"}}</label>
+        <label>{{localize "PW.Response"}}</label>
         <input type="text" name="data.response" value="{{data.response}}" data-dtype="String"/>
       </div>
 

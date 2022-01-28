@@ -1,4 +1,4 @@
-export class MigrateDw {
+export class MigratePw {
 
   static runMigration() {
     // Retrieve the version.
