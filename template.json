@@ -204,7 +204,9 @@
       "name": "",
       "beliefs": "",
       "friends": "",
-      "enemies": ""
+      "enemies": "",
+      "signal": "",
+      "response": ""
     },
     "duty": {
       "templates": [
