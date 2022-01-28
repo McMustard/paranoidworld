@@ -84,10 +84,11 @@ export class DwActorSheet extends ActorSheet {
 
     data.harmLevels = {
       okay: 'DW.Okay',
-      snafu: 'DW.Snafued',
+      snafued: 'DW.Snafued',
       injured: 'DW.Injured',
       wounded: 'DW.Wounded',
-      down: 'DW.Down',
+      downed: 'DW.Downed',
+      maimed: 'DW.Maimed',
       killed: 'DW.Killed',
       vaporized: 'DW.Vaporized'
     };
