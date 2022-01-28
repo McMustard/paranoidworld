@@ -2,7 +2,7 @@
   "name": "paranoidworld",
   "title": "Paranoid World",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "minimumCoreVersion": 9,
   "compatibleCoreVersion": 9,
   "templateVersion": 2,
@@ -145,5 +145,5 @@
   "socket": true,
   "url": "",
   "manifest": "https://raw.githubusercontent.com/McMustard/paranoidworld/master/system.json",
-  "download": "https://github.com/McMustard/paranoidworld/archive/refs/tags/version-0.0.2.zip"
+  "download": "https://github.com/McMustard/paranoidworld/archive/refs/tags/version-0.0.3.zip"
 }
