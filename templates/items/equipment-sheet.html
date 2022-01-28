@@ -31,6 +31,22 @@
             <input class='tags-input-source' placeholder='write some tags' value='{{ data.tags }}'/>
           </div>
           <div class="resource">
+            <label>{{localize "PW.Clearance"}}</label>
+            <select name="data.clearance" data-dtype="String">
+              {{#select data.clearance}}
+              <option value="">—</option>
+              <option value="red">{{localize "PW.RED"}}</option>
+              <option value="orange">{{localize "PW.ORANGE"}}</option>
+              <option value="yellow">{{localize "PW.YELLOW"}}</option>
+              <option value="green">{{localize "PW.GREEN"}}</option>
+              <option value="blue">{{localize "PW.BLUE"}}</option>
+              <option value="indigo">{{localize "PW.INDIGO"}}</option>
+              <option value="violet">{{localize "PW.VIOLET"}}</option>
+              <option value="ultraviolet">{{localize "PW.ULTRAVIOLET"}}</option>
+              {{/select}}
+            </select>
+          </div>
+          <div class="resource">
             <label>{{localize "PW.Equipped"}}</label>
             <input type="checkbox" name="data.equipped" {{checked data.equipped}}/>
           </div>
