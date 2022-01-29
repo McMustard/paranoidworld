@@ -1926,16 +1926,16 @@ a.tag:hover, a.tag:focus {
       padding: 4px;
       border-radius: 4px;
       margin-bottom: 10px; }
-  .paranoidworld.sheet.dw-level-up .dialog-buttons {
+  .paranoidworld.sheet.pw-level-up .dialog-buttons {
     padding-bottom: 10px; }
-  .paranoidworld.sheet.dw-level-up .selection-list {
+  .paranoidworld.sheet.pw-level-up .selection-list {
     gap: 20px 10px;
     margin-bottom: 20px;
     padding: 0;
     margin: 0;
     list-style-type: none; }
-  .paranoidworld.sheet.dw-level-up .selection-list > li,
-  .paranoidworld.sheet.dw-level-up .selection-list .grid > li {
+  .paranoidworld.sheet.pw-level-up .selection-list > li,
+  .paranoidworld.sheet.pw-level-up .selection-list .grid > li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1947,53 +1947,53 @@ a.tag:hover, a.tag:focus {
     flex-wrap: nowrap;
     padding: 0 0 0 10px;
     list-style-type: none; }
-  .paranoidworld.sheet.dw-level-up .selection-control {
+  .paranoidworld.sheet.pw-level-up .selection-control {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 22px;
     flex: 0 0 22px; }
-  .paranoidworld.sheet.dw-level-up .selection-content {
+  .paranoidworld.sheet.pw-level-up .selection-content {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1; }
-  .paranoidworld.sheet.dw-level-up select {
+  .paranoidworld.sheet.pw-level-up select {
     margin-right: 10px; }
-  .paranoidworld.sheet.dw-level-up .cell__description {
+  .paranoidworld.sheet.pw-level-up .cell__description {
     font-size: 18px;
     padding: 10px;
     margin: 10px;
     background: #edf2f7; }
-    .paranoidworld.sheet.dw-level-up .cell__description .selection-list {
+    .paranoidworld.sheet.pw-level-up .cell__description .selection-list {
       margin-left: 30px; }
-  .paranoidworld.sheet.dw-level-up h1,
-  .paranoidworld.sheet.dw-level-up h2 {
+  .paranoidworld.sheet.pw-level-up h1,
+  .paranoidworld.sheet.pw-level-up h2 {
     font-size: 18px; }
-  .paranoidworld.sheet.dw-level-up h3 {
+  .paranoidworld.sheet.pw-level-up h3 {
     font-size: 16px; }
-  .paranoidworld.sheet.dw-level-up h4 {
+  .paranoidworld.sheet.pw-level-up h4 {
     font-size: 14px; }
-  .paranoidworld.sheet.dw-level-up .flexrow.center .cell__title {
+  .paranoidworld.sheet.pw-level-up .flexrow.center .cell__title {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-  .paranoidworld.sheet.dw-level-up .flexrow.center .selection-list {
+  .paranoidworld.sheet.pw-level-up .flexrow.center .selection-list {
     -ms-flex-pack: distribute;
     justify-content: space-around;
     margin: 20px 0; }
-  .paranoidworld.sheet.dw-level-up .flexrow .selection-list {
+  .paranoidworld.sheet.pw-level-up .flexrow .selection-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .paranoidworld.sheet.dw-level-up .result-label {
+  .paranoidworld.sheet.pw-level-up .result-label {
     margin-right: 5px; }
-    .paranoidworld.sheet.dw-level-up .result-label + p,
-    .paranoidworld.sheet.dw-level-up .result-label + div,
-    .paranoidworld.sheet.dw-level-up .result-label + span {
+    .paranoidworld.sheet.pw-level-up .result-label + p,
+    .paranoidworld.sheet.pw-level-up .result-label + div,
+    .paranoidworld.sheet.pw-level-up .result-label + span {
       display: inline; }
-  .paranoidworld.sheet.dw-level-up .result--choices {
+  .paranoidworld.sheet.pw-level-up .result--choices {
     margin-top: 5px; }
-    .paranoidworld.sheet.dw-level-up .result--choices ul,
-    .paranoidworld.sheet.dw-level-up .result--choices ol,
-    .paranoidworld.sheet.dw-level-up .result--choices p {
+    .paranoidworld.sheet.pw-level-up .result--choices ul,
+    .paranoidworld.sheet.pw-level-up .result--choices ol,
+    .paranoidworld.sheet.pw-level-up .result--choices p {
       margin-top: 0; }
   .paranoidworld.sheet .class .items-list,
   .paranoidworld.sheet .class .items-list .item {
