@@ -10,25 +10,6 @@
 
     <div class="grid grid-3col">
 
-      {{#if clubs}}
-        <section class="cell cell--clubs">
-          <h2 class="cell__title">{{localize "PW.ChooseClub"}}</h2>
-          <ul class="selection-list">
-            {{#each clubs as |club key|}}
-              <li>
-                <div class="selection-control">
-                  <input type="radio" name="club-selection" data-club="{{key}}">
-                </div>
-                <div class="selection-content">
-                  <h3>{{club.label}}</h3>
-                  <p>{{club.description}}</p>
-                </div>
-              </li>
-            {{/each}}
-          </ul>
-        </section>
-      {{/if}}
-
       {{#if drives}}
         <section class="cell cell--drives">
           <h2 class="cell__title">{{localize "PW.ChooseDrive"}}</h2>

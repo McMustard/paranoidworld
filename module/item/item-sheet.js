@@ -252,7 +252,6 @@ export class PwItemSheet extends ItemSheet {
     const form = this.form;
 
     let field_types = {
-      'clubs': 'club',
       'drives': 'drive'
     };
 
@@ -351,19 +350,6 @@ export class PwItemSheet extends ItemSheet {
       }
     }
 
-    // Re-index the clubs.
-    i = 0;
-    if (typeof formObj.data.clubs == 'object') {
-      for (let [k, v] of Object.entries(formObj.data.clubs)) {
-        if (i != k) {
-          formObj.data.clubs[i] = v;
-          delete formObj.data.clubs[k];
-          deletedKeys.push(`clubs.${k}`);
-        }
-        i++;
-      }
-    }
-
     // Re-index the drives.
     i = 0;
     if (typeof formObj.data.drives == 'object') {
@@ -386,13 +372,12 @@ export class PwItemSheet extends ItemSheet {
     }
 
     // Re-combine formData
-    formData = Object.entries(formData).filter(e => !e[0].match(/data\.(equipment|drives|clubs)/g)).reduce((obj, e) => {
+    formData = Object.entries(formData).filter(e => !e[0].match(/data\.(equipment|drives)/g)).reduce((obj, e) => {
       obj[e[0]] = e[1];
       return obj;
     }, {
       _id: this.object.id,
       "data.equipment": formObj.data.equipment,
-      "data.clubs": formObj.data.clubs,
       "data.drives": formObj.data.drives
     });
 

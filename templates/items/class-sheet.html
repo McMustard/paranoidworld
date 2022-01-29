@@ -27,24 +27,6 @@
       {{!-- Details Tab --}}
       <div class="tab" data-group="primary" data-tab="details">
         <div class="class-fields grid grid-3col">
-          {{!-- Clubs --}}
-          <div class="cell resource">
-            <div class="cell__title">
-              <label>{{localizeOverride "PW.Clubs" "clubPlural"}}</label>
-              <a class="class-control" data-action="create" data-type="clubs"><i class="fas fa-plus"></i></a>
-            </div>
-            <ul class="items-list">
-            {{#each data.clubs as |club id|}}
-              <li class="item club" data-index="{{id}}">
-                <div class="flexrow">
-                  <input type="text" class="input input--title" name="data.clubs.{{id}}.label" value="{{club.label}}" data-dtype="string"/>
-                  <a class="class-control" data-action="delete" data-type="clubs"><i class="fas fa-trash"></i></a>
-                </div>
-                <textarea class="club" name="data.clubs.{{id}}.description" rows="5" title="What's your club?" data-dtype="String">{{club.description}}</textarea>
-              </li>
-            {{/each}}
-            </ul>
-          </div>
           {{!-- Drives --}}
           <div class="cell resource">
             <div class="cell__title">

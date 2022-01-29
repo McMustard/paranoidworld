@@ -103,11 +103,7 @@
           "description": ""
         },
         "look": "",
-        "class": "",
-        "club": {
-          "value": "",
-          "description": ""
-        }
+        "class": ""
       }
     },
     "npc": {
@@ -125,8 +121,9 @@
       "bond",
       "tag",
       "class",
-      "club",
-      "duty"
+      "job",
+      "duty",
+      "club"
     ],
     "templates": {
       "base": {
@@ -192,11 +189,24 @@
       "templates": [
         "base"
       ],
-      "clubs": {},
       "drives": {},
       "equipment": {},
       "harm": "Okay",
       "load": 10
+    },
+    "job": {
+      "templates": [
+        "base"
+      ],
+      "name": "",
+      "description": ""
+    },
+    "duty": {
+      "templates": [
+        "base"
+      ],
+      "name": "",
+      "description": ""
     },
     "club": {
       "templates": [
@@ -208,13 +218,6 @@
       "enemies": "",
       "signal": "",
       "response": ""
-    },
-    "duty": {
-      "templates": [
-        "base"
-      ],
-      "name": "",
-      "description": ""
     }
   }
 }

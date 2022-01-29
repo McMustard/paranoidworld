@@ -128,24 +128,6 @@ Hooks.once("init", async function() {
     default: ''
   });
 
-  game.settings.register("paranoidworld", "clubSingle", {
-    name: game.i18n.localize("PW.Settings.clubSingle.name"),
-    hint: game.i18n.localize("PW.Settings.clubSingle.hint"),
-    scope: 'world',
-    config: true,
-    type: String,
-    default: ''
-  });
-
-  game.settings.register("paranoidworld", "clubPlural", {
-    name: game.i18n.localize("PW.Settings.clubPlural.name"),
-    hint: game.i18n.localize("PW.Settings.clubPlural.hint"),
-    scope: 'world',
-    config: true,
-    type: String,
-    default: ''
-  });
-
   game.settings.register("paranoidworld", "bondSingle", {
     name: game.i18n.localize("PW.Settings.bondSingle.name"),
     hint: game.i18n.localize("PW.Settings.bondSingle.hint"),

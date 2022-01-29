@@ -171,6 +171,9 @@ export class PwActorSheet extends ActorSheet {
       moves: data.moves,
       rollModes: data.rollModes,
       harmLevels: data.harmLevels,
+      jobs: data.jobs,
+      duties: data.duties,
+      clubs: data.clubs,
       basicMoves: data.basicMoves,
       advancedMoves: data.advancedMoves,
       startingMoves: data.startingMoves,
@@ -212,6 +215,9 @@ export class PwActorSheet extends ActorSheet {
     const specialMoves = [];
     const equipment = [];
     const bonds = [];
+    const jobs = [];
+    const duties = [];
+    const clubs = [];
 
     // Iterate through items, allocating to containers
     // let totalWeight = 0;
@@ -249,6 +255,15 @@ export class PwActorSheet extends ActorSheet {
       else if (i.type === 'bond') {
         bonds.push(i);
       }
+      else if (i.type === 'job') {
+        jobs.push(i);
+      }
+      else if (i.type === 'duty') {
+        duties.push(i);
+      }
+      else if (i.type === 'club') {
+        clubs.push(i);
+      }
     }
 
     // Assign and return
@@ -261,6 +276,12 @@ export class PwActorSheet extends ActorSheet {
     sheetData.equipment = equipment;
     // Bonds
     sheetData.bonds = bonds;
+    // Jobs
+    sheetData.jobs = jobs;
+    // Duties
+    sheetData.duties = duties;
+    // Clubs
+    sheetData.clubs = clubs;
   }
 
   /**
@@ -504,21 +525,6 @@ export class PwActorSheet extends ActorSheet {
     }
     let blurb = class_item ? class_item.data.data.description : null;
 
-    // Get clubs.
-    let clubs = [];
-    if (!this.actor.data.data.details.club.value || !this.actor.data.data.details.club.description) {
-      clubs = class_item.data.data.clubs;
-      if (typeof clubs == 'object') {
-        clubs = Object.entries(clubs).map(r => {
-          return {
-            key: r[0],
-            label: r[1]['label'],
-            description: r[1]['description']
-          };
-        });
-      }
-    }
-
     // Get drives.
     let drives = [];
     if (!this.actor.data.data.details.drive.value || !this.actor.data.data.details.drive.description) {
@@ -628,7 +634,6 @@ export class PwActorSheet extends ActorSheet {
       char_class: char_class,
       char_class_name: orig_class_name,
       blurb: blurb.length > 0 ? blurb : null,
-      clubs: clubs.length > 0 ? clubs : null,
       drives: drives.length > 0 ? drives : null,
       equipment: equipment ? equipment : null,
       ability_scores: actorData.attributes.xp.value == 0 ? ability_scores : null,
@@ -642,7 +647,6 @@ export class PwActorSheet extends ActorSheet {
 
     const itemData = {
       moves: moves,
-      clubs: clubs,
       drives: drives,
       equipment: equipment_list,
       class_item: class_item,
@@ -697,7 +701,6 @@ export class PwActorSheet extends ActorSheet {
     let move_ids = [];
     let equipment_ids = [];
     let abilities = [];
-    let club = null;
     let drive = null;
     for (let input of $selected) {
       if (input.dataset.itemId) {
@@ -707,9 +710,6 @@ export class PwActorSheet extends ActorSheet {
         else if (input.dataset.type == 'equipment') {
           equipment_ids.push(input.dataset.itemId);
         }
-      }
-      else if (input.dataset.club) {
-        club = itemData.clubs[input.dataset.club];
       }
       else if (input.dataset.drive) {
         drive = itemData.drives[input.dataset.drive];
@@ -747,13 +747,6 @@ export class PwActorSheet extends ActorSheet {
       });
     }
 
-    const data = {};
-    if (club) {
-      data['details.club'] = {
-        value: club.label,
-        description: club.description
-      };
-    }
     if (drive) {
       data['details.drive'] = {
         value: drive.label,
